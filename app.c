@@ -64,14 +64,57 @@ void media()
     }
 }
 
+void parimpar()
+{
+    printf("Digite um número:");
+    int num;
+    scanf("%i", &num);
+    if(num % 2 == 0)
+    {
+        printf("O número é par\n");
+    }
+    else
+    {
+        printf("O número é ímpar\n");
+    }
+    if(num % 5 == 0)
+    {
+        printf("O número é múltiplo de 5\n");
+    }
+    else
+    {
+        printf("O número não é múltiplo de 5\n");
+    } 
+}
+
+void anobisexto()
+{
+    printf("Digite um ano:");
+    int ano;
+    scanf("%i", &ano);
+    if(ano % 4 == 0 && ano % 100 != 0)
+    {
+        printf("O ano é bisexto\n");
+    }
+    else if(ano % 4 == 0 && ano % 100 == 0 && ano % 400 == 0)
+    {
+        printf("O ano é bisexto\n");
+    }
+    else
+    {
+        printf("O ano não é bisexto\n");
+    }
+}
+
 int main()
 {   
     int opcao;
     printf("Digite a função a ser selecionada\n");
     printf("1-Função Triangulo\n");
     printf("2-Função Media\n");
+    printf("3-Par ou Impar\n");
+    printf("4-Ano Bisexto\n");
     printf("0-Sair\n");
-    printf("420-capae\n");
     scanf("%d", &opcao);
     if(opcao == 1){
         triangulo();
@@ -79,12 +122,18 @@ int main()
     else if(opcao == 2){
         media();
     }
+    else if(opcao == 3){
+        parimpar();
+        
+    }
+    else if(opcao == 4){
+        anobisexto();
+    }
     else if(opcao == 0){
         exit;
     }
-    else if(opcao == 420){
-        printf("parabens vc é loco da cabeça");
-    }
-    
+    else{
+        printf("Opção inválida\n");
+    } 
     return 0;
 }
