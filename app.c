@@ -109,6 +109,7 @@ void anobisexto()
 int main()
 {   
     int opcao;
+    do{
     printf("Digite a função a ser selecionada\n");
     printf("1-Função Triangulo\n");
     printf("2-Função Media\n");
@@ -135,5 +136,11 @@ int main()
     else{
         printf("Opção inválida\n");
     } 
+    return 0;
+
+    }while(opcao != 0);
+    printf("Saindo do programa\n");   
+    printf("Obrigado por usar o programa\n");
+    
     return 0;
 }
