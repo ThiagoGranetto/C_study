@@ -106,6 +106,35 @@ void anobisexto()
     }
 }
 
+void tabuada()
+{
+    printf("Tabuada do número:\n");
+    int num;
+    scanf("%i", &num);
+
+    printf("Quantidade de vezes que deseja ver a tabuada:\n");
+    int vezes;
+    scanf("%i", &vezes);
+    printf("Tabuada do %i\n", num); 
+    // Exibe a tabuada do número
+    for (int i = 1; i <= vezes; i++)
+    {
+        printf("%i x %i = %i\n", num, i, num * i);
+    }
+    printf("Deseja ver a tabuada de outro número? (1-Sim / 0-Não)\n");
+    int opcao;
+    scanf("%i", &opcao);
+    if (opcao == 1)
+    {
+        tabuada();
+    }
+    else
+    {
+        printf("Saindo da tabuada\n");
+    }
+
+}
+
 int main()
 {
     int opcao;
@@ -114,6 +143,7 @@ int main()
         printf("2-Função Media\n");
         printf("3-Par ou Impar\n");
         printf("4-Ano Bisexto\n");
+        printf("5-Tabuada\n");
         printf("0-Sair\n");
         scanf("%d", &opcao);
         switch (opcao)
@@ -129,6 +159,9 @@ int main()
                 break;
             case 4:
                 anobisexto();
+                break;
+            case 5:
+                tabuada();
                 break;
             case 0:
                 printf("Saindo do programa\n");
