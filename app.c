@@ -33,35 +33,25 @@ void triangulo()
 
 void media()
 {
-    printf("Calculo de média da turma\n");
-    printf("Digite a primeira nota: ");
-    float nota1;
-    scanf("%f", &nota1);
+    char nome[100];
+    printf("Digite o nome do aluno: ");
+    scanf("%s", &nome);
 
-    printf("Digite a segunda nota: ");
-    float nota2;
-    scanf("%f", &nota2);
+    int tamanho;
+    printf("Digite o numero de notas: ");
+    scanf("%d", &tamanho);
 
-    printf("Digite a terceira nota: ");
-    float nota3;
-    scanf("%f", &nota3);
+    int notas[tamanho];
+    int media = 0;
 
-    float media = (nota1 + nota2 + nota3) / 3;
-    printf("A média da turma é: %.2f\n", media);
-    return 0;
-
-    if (media >= 7)
+    for (int i = 0; i < tamanho; i++)
     {
-        printf("Aprovado\n");
+        printf("Digite a nota %d: \n", i + 1);
+        scanf("%d", &notas[i]);
+        media = media + notas[i];
     }
-    else if (media >= 5)
-    {
-        printf("Recuperação\n");
-    }
-    else
-    {
-        printf("Reprovado\n");
-    }
+    media = media / tamanho;
+    printf("A média do aluno %s é: %d\n", nome, media);
 }
 
 void parimpar()
@@ -115,7 +105,7 @@ void tabuada()
     printf("Quantidade de vezes que deseja ver a tabuada:\n");
     int vezes;
     scanf("%i", &vezes);
-    printf("Tabuada do %i\n", num); 
+    printf("Tabuada do %i\n", num);
     // Exibe a tabuada do número
     for (int i = 1; i <= vezes; i++)
     {
@@ -132,45 +122,44 @@ void tabuada()
     {
         printf("Saindo da tabuada\n");
     }
-
 }
 
 int main()
 {
     int opcao;
-        printf("Digite a função a ser selecionada\n");
-        printf("1-Função Triangulo\n");
-        printf("2-Função Media\n");
-        printf("3-Par ou Impar\n");
-        printf("4-Ano Bisexto\n");
-        printf("5-Tabuada\n");
-        printf("0-Sair\n");
-        scanf("%d", &opcao);
-        switch (opcao)
-        {
-            case 1:
-                triangulo();
-                break;
-            case 2:
-                media();
-                break;
-            case 3:
-                parimpar();
-                break;
-            case 4:
-                anobisexto();
-                break;
-            case 5:
-                tabuada();
-                break;
-            case 0:
-                printf("Saindo do programa\n");
-                printf("Obrigado por usar o programa\n");
-                printf("Volte sempre\n");
-                break;
-            default:
-                printf("Opção inválida\n");
-                break;
-            }      
-            return 0;
+    printf("Digite a função a ser selecionada\n");
+    printf("1-Função Triangulo\n");
+    printf("2-Função Media\n");
+    printf("3-Par ou Impar\n");
+    printf("4-Ano Bisexto\n");
+    printf("5-Tabuada\n");
+    printf("0-Sair\n");
+    scanf("%d", &opcao);
+    switch (opcao)
+    {
+    case 1:
+        triangulo();
+        break;
+    case 2:
+        media();
+        break;
+    case 3:
+        parimpar();
+        break;
+    case 4:
+        anobisexto();
+        break;
+    case 5:
+        tabuada();
+        break;
+    case 0:
+        printf("Saindo do programa\n");
+        printf("Obrigado por usar o programa\n");
+        printf("Volte sempre\n");
+        break;
+    default:
+        printf("Opção inválida\n");
+        break;
+    }
+    return 0;
 }
